@@ -124,7 +124,7 @@ function drawLayers(call) {
         'source': 'SPBSTU',
         'layout': {},
         'paint': {
-            'line-color': '#000',
+            'line-color': '#34b549',
             'line-width': 2
         }
     });
@@ -147,7 +147,7 @@ function drawLayers(call) {
         'source': 'SPBSTU2',
         'layout': {},
         'paint': {
-            'line-color': '#000',
+            'line-color': '#34b549',
             'line-width': 2
         }
     });
@@ -170,7 +170,7 @@ function drawLayers(call) {
         'source': 'SPBSTU3',
         'layout': {},
         'paint': {
-            'line-color': '#000',
+            'line-color': '#34b549',
             'line-width': 2
         }
     });
@@ -194,26 +194,11 @@ function drawLayers(call) {
         'source': 'SPBSTU4',
         'layout': {},
         'paint': {
-            'line-color': '#000',
+            'line-color': '#34b549',
             'line-width': 2
         }
     });
 }
-
-// function removeAll() {
-//     map.removeLayer('SPBSTU');
-//     map.removeLayer('outline');
-//     // map.removeSource('SPBSTU');
-//     map.removeLayer('SPBSTU2');
-//     map.removeLayer('outline2');
-//     // map.removeSource('SPBSTU2');
-//     map.removeLayer('SPBSTU3');
-//     map.removeLayer('outline3');
-//     // map.removeSource('SPBSTU3');
-//     map.removeLayer('SPBSTU4');
-//     map.removeLayer('outline4');
-//     // map.removeSource('SPBSTU4');
-// }
 
 map.on('load', () => {
     setSource();
@@ -231,41 +216,8 @@ class PitchToggle {
 
     onAdd(map) {
         this._map = map;
-        // let _this = this;
-
         this._btn = document.createElement("button");
-        // this._btn.className = "mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-3d";
-        // this._btn.type = "button";
-        // this._btn["aria-label"] = "Toggle Pitch";
-        // this._btn.onclick = function () {
-        //     if (map.getPitch() === 0) {
-        //         let options = { pitch: _this._pitch, bearing: _this._bearing };
-        //         if (_this._minpitchzoom && map.getZoom() > _this._minpitchzoom) {
-        //             options.zoom = _this._minpitchzoom;
-        //         }
-        //         map.easeTo(options);
-        //         _this._btn.className =
-        //             "mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-2d";
-        //         // removeAll();
-        //         map.setStyle('mapbox://styles/raindropss/clcp2523n000515o00aodj5v3');
-        //         // setSource();
-        //         // drawLayers();
-        //         map.setZoom(16);
-
-        //     } else {
-        //         map.easeTo({ pitch: 0, bearing: 0 });
-        //         _this._btn.className =
-        //             "mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-3d";
-        //         // removeAll();
-        //         // setSource();
-        //         // drawLayers();
-        //         map.setZoom(16);
-        //     }
-        // };
-
         this._container = document.createElement("div");
-        // // this._container.className = "mapboxgl-ctrl-group mapboxgl-ctrl";
-        // this._container.appendChild(this._btn);
         return this._container;
     }
 
@@ -292,11 +244,9 @@ class MapboxGLButtonControl {
         this._btn.type = "button";
         this._btn.title = this._title;
         this._btn.onclick = this._eventHandler;
-
         this._container = document.createElement("div");
         this._container.className = "mapboxgl-ctrl-group mapboxgl-ctrl";
         this._container.appendChild(this._btn);
-
         return this._container;
     }
 
