@@ -6,7 +6,6 @@ const map = new mapboxgl.Map({
     zoom: 16 // starting zoom
 });
 
-
 function setSource(call) {
     // Add a data source containing GeoJSON data.
     map.addSource('SPBSTU', {
@@ -97,7 +96,7 @@ function setSource(call) {
                         [30.35264916936759, 59.99483318418451],
                         [30.352960334268566, 59.99550383207934],
                         [30.355781982032692, 59.99507993256796],
-                        [30.35779466885223, 59.99585131141121]                        
+                        [30.35779466885223, 59.99585131141121]
                     ]
                 ]
             }
@@ -265,7 +264,7 @@ map.addControl(
         trackUserLocation: true,
         // Draw an arrow next to the location dot to indicate which direction the device is heading.
         showUserHeading: true
-    })
+    }), "top-left"
 );
 
 const ctrlPoint = new MapboxGLButtonControl({
@@ -285,4 +284,4 @@ function def(event) {
 
 map.addControl(new mapboxgl.NavigationControl(), "top-left");
 map.addControl(new PitchToggle({ minpitchzoom: 11 }), "top-left");
-map.addControl(ctrlPoint, "top-right");
+map.addControl(ctrlPoint, "top-left");
